@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="UFT-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+    </head>
+
+        <header>
+
+
+
+        <nav id="global_navi">
+        <ul>
+            <li><a href="{% url 'shop:goods' %}">HOME</a></li>
+            <li><a href="#">未定1</a></li>
+            <li><a href="#">未定2</a></li>
+
+        </ul>
+    </nav>        
+</header>
+<body>
+
+
+        {% if user.is_authenticated %}
+        <li><a href="#">マイページ</a></li>
+
+        <li><a href="{% url 'accounts:logout' %}"
+            class="text-white">ログアウト</a></li>
+        <li><a href="mailto:hmj2322015@stu.o-hara.ac.jp">連絡先</a></li>
+        <a href="{% url 'shop:Listing' %}">出品する</a>
+        {% else %}  
+        <!--非ログイン時の表示-->
+        <li><a href="{% url 'accounts:signup' %}"
+            class="text-white">アカウント登録</a></li>
+        <li><a href="{% url 'accounts:login' %}"
+            class="text-white">ログイン</a></li>
+        <li><a href="mailto:hmj2322015@stu.o-hara.ac.jp">連絡先</a></li>
+        {% endif %}
+        <h1>{% block h1 %}{% endblock %}</h1>
+        <main>
+        {% block contents %}{% endblock %}
+        </main>
+        
+
+<!--フッダー-->
+    <footer>
+    <div id="footer_nav">
+    <ul>
+        <li><a href="{% url 'shop:goods' %}">HOME</a></li>
+        <li><a href="#">未定1</a></li>
+        <li><a href="#">未定2</a></li>
+        
+    </ul>
+    </div>
+
+    <small>&copy; 2023.My page.</small>
+    </footer>
+    <!--/フッター-->
+</body>
+
+</html>
+

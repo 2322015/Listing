@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UFT-8">
+        <title>出品ページ</title>
+    </head>
+    <body>
+    <br>
+
+            <div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <th>カテゴリ</th>
+                            <td>{{ form.category }}</td>
+                        </tr>
+                        <tr>
+                            <th>商品名</th>
+                            <td>{{ form.goods_title }}</td>
+                        </tr>
+                        <tr>
+                            <th>説明</th>
+                            <td>{{ form.goods_explanation }}</td>
+                        </tr>
+                            <th>備考</th>
+                            <td>{{ form.goods_remark }}</td>
+                        </tr>                        
+                            <th>値段</th>
+                            <td>{{ form.goods_price }}</td>
+                        </tr>
+                            <th>品質</th>
+                            <td>{{ form.goods_quality }}</td>
+                        </tr>
+                            <th>写真１</th>
+                            <td>{{ form.preview1 }}</td>
+                        </tr>
+                        </tr>
+                            <th>写真2</th>
+                            <td>{{ form.preview2 }}</td>
+                        </tr>
+                        </tr>
+                            <th>写真3</th>
+                            <td>{{ form.preview3 }}</td>
+                        </tr>
+                        </tr>
+                            <th>写真4</th>
+                            <td>{{ form.preview4 }}</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <button type="submit">出品する</button>
+                </form>
+            </div>
+    </body>
+</html>

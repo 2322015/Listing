@@ -1,0 +1,32 @@
+{% load static %}
+    <h1>アカウント登録</h1>
+    <form method = "post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey">{{ field.help_text }}</small><!--field.help_textはこの項目は必須です等の文-->
+                    
+                {% endif %}
+                <!--エラー発生時の設定-->
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+
+
+            </p>
+        {% endfor %}
+        <br>
+
+
+        <p style="color: red">
+            ※メールアドレスはパスワードリセットする際に必要にな値ますので登録をお願いします
+        </p>
+        <input type="submit" value="Sign up">
+    </form>
+
+        <p><a href="{% url 'shop:goods' %}">
+            登録をやめてトップページに戻る</a>
+        <p>

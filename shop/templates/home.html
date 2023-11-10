@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+        <title>{% block title %}HOME{% endblock %}</title>
+        <h1>{% block h1 %}ゾンアマ{% endblock %}</h1>
+
+        <main>
+            {% block contents %}
+            {% for i in goods %}
+            <p>商品名:{{i.goods_title}}<p>              
+            <p>価格:{{i.goods_price}}円</p>
+            {{i.preview1}}
+            <p>カテゴリー:{{i.category}}</p>
+            <p>出品者:{{i.user}}</p>
+            <p>--------------------------------------------</p>
+            {% endfor %}
+            {% endblock %}
+            </main>
+            

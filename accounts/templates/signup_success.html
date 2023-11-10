@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+        <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+        <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/css/6-3-1.css">
+
+    </head>
+
+    <body>
+        <div id="video-area">
+            <video id="video" poster="images/%E7%84%A1%E9%A1%8C%202023-04-26%2012-18-43.jpg" webkit-playsinline playsinline muted autoplay loop>
+                <source src="{% static "#" %}" type="video/mp4">
+            </video>
+            </div>
+        <h1>登録が完了しました</h1>
+        <p><a href="{% url 'accounts:login' %}">ログインはこちらから</a><p>
+    </body>
+</html>
